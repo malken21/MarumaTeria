@@ -14,6 +14,9 @@ export class SimulationService {
 
   setMode(mode: SimulationMode) {
     this.mode.set(mode);
+    this.latticeHeat.set(0);
+    this.surfaceExcited.set(0);
+    
     if (mode === 'metal') {
       this.statusMessage.set("金属モード：自由電子と光の相互作用をシミュレートします。");
     } else {

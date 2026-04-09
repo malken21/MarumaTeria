@@ -16,6 +16,7 @@ export class SimulatorUiComponent {
 
   changeMode(mode: 'metal' | 'nonmetal') {
     this.simService.setMode(mode);
+    this.threeService.clearPhotons();
   }
 
   toggleElectrons(event: Event) {

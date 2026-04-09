@@ -76,11 +76,15 @@ export class ThreeSceneService implements OnDestroy {
     this.simRenderer.shootLight(type);
   }
 
+  clearPhotons() {
+    this.simRenderer.clearPhotons();
+  }
+
   private setCameraPosition(width: number) {
     if (width <= 600) {
-      this.camera.position.set(0, 20, 45);
+      this.camera.position.set(20, 20, 35);
     } else {
-      this.camera.position.set(0, 15, 30);
+      this.camera.position.set(15, 12, 25);
     }
   }
 

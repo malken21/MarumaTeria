@@ -278,4 +278,10 @@ export class SimulationRendererService {
     (p.mesh.material as THREE.Material).dispose();
     this.photons.splice(index, 1);
   }
+
+  clearPhotons() {
+    for (let i = this.photons.length - 1; i >= 0; i--) {
+      this.disposePhoton(i);
+    }
+  }
 }
