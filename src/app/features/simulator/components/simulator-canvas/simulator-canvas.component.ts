@@ -7,12 +7,9 @@ import { ThreeSceneService } from '../../../../core/services/three-scene.service
   template: `<div #container class="canvas-container"></div>`,
   styles: [`
     .canvas-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: transparent;
     }
   `]
 })

@@ -1,0 +1,28 @@
+.layout-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #050510;
+}
+
+app-simulator-ui {
+    z-index: 10;
+}
+
+app-simulator-canvas {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 600px) {
+    .layout-container {
+        flex-direction: column-reverse; /* UI on bottom, Canvas on top */
+    }
+    
+    app-simulator-canvas {
+        flex: 1;
+        min-height: 50vh;
+    }
+}

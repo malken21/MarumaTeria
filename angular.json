@@ -48,7 +48,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "assets"
             ],
             "styles": ["src/styles.css"]
           },
@@ -66,7 +67,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "serviceWorker": "ngsw-config.json"
             },
             "development": {
               "optimization": false,
