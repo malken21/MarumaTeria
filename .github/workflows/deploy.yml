@@ -34,8 +34,7 @@ jobs:
 
       - name: Build
         run: |
-          # リポジトリ名をベースURLに自動設定
-          npm run build -- --base-href /$REPO_NAME/
+          npm run build -- --base-href /
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
