@@ -12,7 +12,7 @@
       class="mode-btn" 
       [class.active]="simService.mode() === 'nonmetal'" 
       (click)="changeMode('nonmetal')"
-    >非金属（木・プラ等）</div>
+    >非金属<span class="btn-desc">（木・プラ等）</span></div>
   </div>
 
   <div class="controls-row" *ngIf="simService.mode() === 'metal'">
@@ -24,25 +24,25 @@
   
   <div id="metal-buttons" class="btn-group" *ngIf="simService.mode() === 'metal'">
     <button class="btn-silver" (click)="shootLight('silver')">
-      光を当てる（銀：全て反射） <span style="color:#e0e0e0;">⚪</span>
+      光を当てる<span class="btn-desc">（銀：全て反射）</span> <span style="color:#e0e0e0;">⚪</span>
     </button>
     <button class="btn-gold" (click)="shootLight('gold')">
-      光を当てる（金：青を吸収） <span style="color:#ffd700;">🟡</span>
+      光を当てる<span class="btn-desc">（金：青を吸収）</span> <span style="color:#ffd700;">🟡</span>
     </button>
     <button class="btn-copper" (click)="shootLight('copper')">
-      光を当てる（銅：青・緑を吸収） <span style="color:#b87333;">🟠</span>
+      光を当てる<span class="btn-desc">（銅：青・緑を吸収）</span> <span style="color:#b87333;">🟠</span>
     </button>
   </div>
 
   <div id="nonmetal-buttons" class="btn-group" *ngIf="simService.mode() === 'nonmetal'">
     <button class="btn-silver" (click)="shootLight('nonmetal')">
-      光を当てる（白：RGBすべて） <span style="color:#ffffff;">🔦</span>
+      光を当てる<span class="btn-desc">（白：RGBすべて）</span> <span style="color:#ffffff;">🔦</span>
     </button>
     <button class="btn-red" (click)="shootLight('nonmetal-red')">
-      赤い光だけ（波長が長い＝低エネルギー） <span style="color:#ff4444;">🔴</span>
+      赤い光だけ<span class="btn-desc">（波長が長い＝低エネルギー）</span> <span style="color:#ff4444;">🔴</span>
     </button>
     <button class="btn-blue" (click)="shootLight('nonmetal-blue')">
-      青い光だけ（波長が短い＝高エネルギー） <span style="color:#4444ff;">🔵</span>
+      青い光だけ<span class="btn-desc">（波長が短い＝高エネルギー）</span> <span style="color:#4444ff;">🔵</span>
     </button>
   </div>
 
