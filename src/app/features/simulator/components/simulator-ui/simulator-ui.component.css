@@ -1,0 +1,160 @@
+#ui-panel {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 360px;
+    max-width: 90vw;
+    background: rgba(15, 20, 30, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    z-index: 10;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+h1 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #00e5ff;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+button:active {
+    transform: scale(0.98);
+}
+.btn-silver:hover { border-color: #e0e0e0; box-shadow: 0 0 15px rgba(224, 224, 224, 0.4); }
+.btn-gold:hover { border-color: #ffd700; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); }
+.btn-copper:hover { border-color: #b87333; box-shadow: 0 0 15px rgba(184, 115, 51, 0.4); }
+.btn-red:hover { border-color: #ff4444; box-shadow: 0 0 15px rgba(255, 68, 68, 0.4); }
+.btn-blue:hover { border-color: #4444ff; box-shadow: 0 0 15px rgba(68, 68, 255, 0.4); }
+
+.mode-switch {
+    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.mode-btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #888;
+    transition: all 0.2s;
+}
+.mode-btn.active {
+    background: rgba(0, 229, 255, 0.2);
+    color: #fff;
+    font-weight: bold;
+    box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #ccc;
+}
+.toggle-label input {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.legend {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.dot-ion { background: #888888; }
+.dot-electron { background: #00e5ff; box-shadow: 0 0 5px #00e5ff; }
+.dot-photon { background: #ffffff; box-shadow: 0 0 5px #ffffff; }
+
+#status {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #ffaa00;
+    min-height: 4em;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    #ui-panel {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        border-radius: 20px 20px 0 0;
+        padding: 15px;
+        padding-bottom: calc(15px + env(safe-area-inset-bottom, 0px));
+        box-sizing: border-box;
+        max-height: 45vh;
+        box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5);
+    }
+    h1 { font-size: 1.1rem; margin-bottom: 8px; }
+    p { font-size: 0.8rem; margin-bottom: 10px; }
+    button { padding: 12px 15px; font-size: 0.9rem; }
+    .legend { font-size: 0.75rem; }
+}
