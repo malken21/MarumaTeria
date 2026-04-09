@@ -15,23 +15,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
+    env:
+      REPO_NAME: ${{ github.event.repository.name }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      
+
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
           node-version: "24"
           cache: "npm"
-      
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build
-        run: npm run build -- --base-href /MarumaTeria/
+        run: |
+          # リポジトリ名をベースURLに自動設定
+          npm run build -- --base-href /$REPO_NAME/
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
@@ -39,18 +43,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: dist/magazine-craft/browser
+          path: dist/$REPO_NAME/browser
 
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
