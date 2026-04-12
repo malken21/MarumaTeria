@@ -31,14 +31,6 @@ export class SimulationRendererService {
   private createMetalStructure() {
     const { METAL_WIDTH, METAL_HEIGHT, METAL_DEPTH, ELECTRON_COUNT, ION_SPACING } = SIM_CONSTANTS;
 
-    // Metal Box wireframe
-    const boxGeo = new THREE.BoxGeometry(METAL_WIDTH, METAL_HEIGHT, METAL_DEPTH);
-    const boxMat = new THREE.MeshBasicMaterial({ 
-      color: 0x334455, wireframe: true, transparent: true, opacity: 0.1 
-    });
-    const metalBox = new THREE.Mesh(boxGeo, boxMat);
-    this.scene.add(metalBox);
-
     // Ions
     const ionGeo = new THREE.SphereGeometry(0.7, 16, 16);
     const ionMat = new THREE.MeshStandardMaterial({ 
